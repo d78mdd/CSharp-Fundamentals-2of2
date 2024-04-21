@@ -57,7 +57,7 @@ namespace _10.LadyBugs
 
 
                 // check if this ladybug is outside the field
-                if (ladybugIndex < 0 || ladybugIndex > fieldSize)
+                if (ladybugIndex < 0 || ladybugIndex >= fieldSize)
                 {
                     continue;
                 }
