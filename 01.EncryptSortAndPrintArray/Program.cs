@@ -19,8 +19,8 @@ namespace _01.EncryptSortAndPrintArray
 
 
             // encrypt the strings
-            string vowelsLower = "aeiouyw";
-            string vowelsUpper = "AEIOUYW";
+            string vowelsLower = "aeiou";
+            string vowelsUpper = "AEIOU";
             string consonantsLower = "bcdfghjklmnpqrstvwxyz";
             string consonantsUpper = "BCDFGHJKLMNPQRSTVWXYZ";
             int[] encryptedStrings = new int[numberOfStrings];
