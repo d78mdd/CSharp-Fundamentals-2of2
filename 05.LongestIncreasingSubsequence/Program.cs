@@ -14,14 +14,24 @@ namespace _05.LongestIncreasingSubsequence
 
             int n = allNumbers.Length;
 
-            int allSubsequencesCount = 0;
+            int continuousSubsequencesCount = 0;
 
-            string[] allSubSequences;
+            string[] continuousSubSequences;
 
-
-            //get all subsequences - but only consecutive
+            for (int i = 0; i < n; i++)
             {
-                // count all subsequences
+
+                for (int j = i + 1; j < n; j++)
+                {
+                    Console.WriteLine(allNumbers[i] + " " + allNumbers[j]);
+                }
+
+
+            }
+            return;
+            //get all continuous subsequences
+            {
+                // count them
 
                 // get a starting number
                 for (int i = 0; i < n; i++)
@@ -30,7 +40,7 @@ namespace _05.LongestIncreasingSubsequence
                     for (int j = i; j < n; j++)
                     {
                         // get all numbers from starting to ending number - construct 1 subsequence
-                        allSubsequencesCount++;
+                        continuousSubsequencesCount++;
                         //Console.Write(allSubsequencesCount + "  ");
                         for (int k = i; k <= j; k++)
                         {
@@ -44,7 +54,7 @@ namespace _05.LongestIncreasingSubsequence
 
 
                 // get them
-                allSubSequences = new string[allSubsequencesCount];
+                continuousSubSequences = new string[continuousSubsequencesCount];
                 int subSequenceIndex = 0;
 
                 // get a starting number
@@ -56,9 +66,9 @@ namespace _05.LongestIncreasingSubsequence
                         // get all numbers from starting to ending number - construct 1 subsequence
                         for (int k = i; k <= j; k++)
                         {
-                            allSubSequences[subSequenceIndex] += allNumbers[k] + " ";
+                            continuousSubSequences[subSequenceIndex] += allNumbers[k] + " ";
                         }
-                        Console.WriteLine(allSubSequences[subSequenceIndex]);
+                        Console.WriteLine(continuousSubSequences[subSequenceIndex]);
                         subSequenceIndex++;
 
                     }
@@ -69,11 +79,133 @@ namespace _05.LongestIncreasingSubsequence
 
 
 
+            //get all subsequences - instead including scattered ones (non-continuous)
+            /* 
+             * 1234 >
+             * 
+             * 1
+             * 12
+             * 123
+             * 1234
+             * 
+             * 124
+             * 
+             * 13
+             * 134
+             * 
+             * 14
+             * 
+             * 2
+             * 23
+             * 234
+             * 
+             * 24
+             * 
+             * 3
+             * 
+             * 34
+             * 
+             * 4
+             * 
+             * 
+             * 
+             * 12345 >
+             * 
+             * 1
+             * 12
+             * 123
+             * 1234
+             * 12345
+             * 
+             * 1235
+             * 
+             * 124
+             * 1245
+             * 
+             * 125
+             * 
+             * 13
+             * 134
+             * 1345
+             * 135
+             * 
+             * 14
+             * 145
+             * 
+             * 15
+             * 
+             * 2
+             * 23
+             * 234
+             * 2345
+             * 
+             * 235
+             * 
+             * 24
+             * 245
+             * 25
+             * 
+             * 3
+             * 34
+             * 345
+             * 
+             * 35
+             * 
+             * 45
+             * 
+             * 5
+             */
+            for (int i = 0; i < n; i++)
+            {
+                //GetPermutationsFor(allNumbers[], from, to);
+
+
+            }
+
+
             //collect only the increasing ones
 
 
             //get the longest one
 
         }
+
+
+        /*
+         * 1234 >
+         * 
+         * 1
+         * 12
+         * 123
+         * 1234
+         * 124
+         * use appending?
+         * 13
+         * 134
+         * 14
+         * 
+         * 
+         * GetPermutationsFor(arr, from + 1, to);
+             * 2
+             * 23
+             * 234
+             * 24
+             * 
+             * GetPermutationsFor(arr, from + 1, to);
+                 * 3
+                 * 34
+                 * 
+                 * GetPermutationsFor(arr, from + 1, to);
+                     * 4
+                     * 
+         */
+        public static void GetPermutationsFor(int[] arr, int from, int to)
+        {
+            // get continuous permutations from [from] to [to]
+            // shall this include nonconinuous?
+
+            GetPermutationsFor(arr, from + 1, to);
+        }
+
     }
 }
