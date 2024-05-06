@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _05.AddAndSubtract
 {
@@ -10,6 +6,20 @@ namespace _05.AddAndSubtract
     {
         static void Main(string[] args)
         {
+            int num1 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+            int num3 = int.Parse(Console.ReadLine());
+            Console.WriteLine(Subtract(Add(num1, num2), num3));
+        }
+
+        static int Add(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+
+        static int Subtract(int num1, int num2)
+        {
+            return num1 - num2;
         }
     }
 }

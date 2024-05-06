@@ -10,10 +10,10 @@ namespace _01.SmallestOfThreeNumbers
             int num2 = int.Parse(Console.ReadLine());
             int num3 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(GetMax(num1, num2, num3));
+            Console.WriteLine(GetMin(num1, num2, num3));
         }
 
-        private static int GetMax(int num1, int num2, int num3)
+        private static int GetMin(int num1, int num2, int num3)
         {
             return Math.Min(Math.Min(num1, num2), num3);
         }
